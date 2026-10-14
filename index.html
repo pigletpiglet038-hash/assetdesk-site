@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Asset Desk Real Estate L.L.C — Exklusive Immobilien in Dubai</title>
+<meta name="description" content="Asset Desk Real Estate — Investiere in nachhaltige & zukunftsstarke Luxusimmobilien in Dubai. Off-Market Objekte direkt vom Entwickler, steuerfreie Renditen, deutsche Qualität." />
+<link rel="icon" href="assets/ad-logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --gold:#c79a46;
+    --gold-light:#e3c67f;
+    --gold-deep:#a87c2e;
+    --ink:#0d0d0f;
+    --ink-soft:#17171b;
+    --paper:#faf8f4;
+    --paper-2:#f1ece3;
+    --muted:#6b6a66;
+    --line:rgba(199,154,70,.22);
+    --shadow:0 20px 60px rgba(0,0,0,.12);
+    --radius:18px;
+    --serif:'Cormorant Garamond',Georgia,serif;
+    --sans:'Inter',system-ui,-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{width:min(1180px,92vw);margin-inline:auto}
+  section{padding:clamp(60px,9vw,120px) 0}
+  .eyebrow{font-size:.78rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-deep);font-weight:600;margin-bottom:18px}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.08;letter-spacing:-.01em}
+  h2{font-size:clamp(2rem,4.2vw,3.3rem)}
+  .lead{font-size:clamp(1.05rem,1.6vw,1.22rem);color:var(--muted);max-width:60ch}
+  .btn{display:inline-flex;align-items:center;gap:.6em;background:linear-gradient(135deg,var(--gold-light),var(--gold) 55%,var(--gold-deep));color:#1a1407;font-weight:600;font-size:.98rem;padding:15px 30px;border-radius:999px;border:none;cursor:pointer;transition:transform .25s ease,box-shadow .25s ease;box-shadow:0 10px 30px rgba(199,154,70,.35)}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(199,154,70,.5)}
+  .btn-ghost{background:transparent;color:var(--paper);border:1px solid rgba(255,255,255,.3);box-shadow:none}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold-light)}
+
+  /* NAV */
+  header.nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s ease,box-shadow .3s ease,padding .3s ease;padding:18px 0}
+  header.nav.scrolled{background:rgba(13,13,15,.92);backdrop-filter:blur(12px);box-shadow:0 10px 30px rgba(0,0,0,.25);padding:12px 0}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between}
+  .brand{display:flex;align-items:center;gap:12px;color:#fff}
+  .brand img{width:42px;height:42px;border-radius:11px}
+  .brand b{font-family:var(--serif);font-size:1.18rem;font-weight:600;letter-spacing:.01em}
+  .brand span{display:block;font-family:var(--sans);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-light);font-weight:500}
+  .nav-links{display:flex;align-items:center;gap:30px}
+  .nav-links a{color:rgba(255,255,255,.82);font-size:.92rem;font-weight:500;transition:color .2s}
+  .nav-links a:hover{color:var(--gold-light)}
+  .lang{display:flex;border:1px solid rgba(255,255,255,.25);border-radius:999px;overflow:hidden}
+  .lang button{background:none;border:none;color:rgba(255,255,255,.7);font-size:.78rem;font-weight:600;padding:6px 12px;cursor:pointer;transition:all .2s;font-family:var(--sans)}
+  .lang button.active{background:var(--gold);color:#1a1407}
+  .burger{display:none;background:none;border:none;color:#fff;cursor:pointer}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;color:#fff;background:#0d0d0f}
+  .hero::before{content:"";position:absolute;inset:0;background:
+     linear-gradient(115deg,rgba(13,13,15,.96) 0%,rgba(13,13,15,.78) 42%,rgba(13,13,15,.35) 100%),
+     url('https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=2000&q=80') center/cover;
+     filter:saturate(.9)}
+  .hero .wrap{position:relative;z-index:2;padding-top:120px;padding-bottom:60px}
+  .hero h1{font-size:clamp(2.6rem,6vw,4.7rem);max-width:16ch}
+  .hero .lead{color:rgba(255,255,255,.85);margin:24px 0 32px;max-width:52ch}
+  .hero-points{list-style:none;display:grid;gap:14px;margin:0 0 38px}
+  .hero-points li{display:flex;align-items:flex-start;gap:12px;font-size:1.02rem;color:rgba(255,255,255,.9)}
+  .hero-points svg{flex:none;margin-top:4px}
+  .hero-cta{display:flex;gap:16px;flex-wrap:wrap}
+  .hero-ticker{position:absolute;bottom:0;left:0;right:0;z-index:2;border-top:1px solid rgba(255,255,255,.12);background:rgba(13,13,15,.5);backdrop-filter:blur(6px)}
+  .hero-ticker .wrap{display:flex;gap:48px;flex-wrap:wrap;padding:20px 0;justify-content:space-between}
+  .stat b{font-family:var(--serif);font-size:1.9rem;color:var(--gold-light);display:block;line-height:1}
+  .stat span{font-size:.8rem;color:rgba(255,255,255,.65);letter-spacing:.05em}
+
+  /* VALUE */
+  .section-head{max-width:720px;margin-bottom:54px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:34px 30px;transition:transform .3s ease,box-shadow .3s ease}
+  .card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .card .ic{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--gold-light),var(--gold-deep));margin-bottom:20px;color:#1a1407}
+  .card h3{font-size:1.4rem;margin-bottom:10px}
+  .card p{color:var(--muted);font-size:.96rem}
+
+  /* COMPARE */
+  .compare{background:var(--ink);color:#fff}
+  .compare .section-head .lead{color:rgba(255,255,255,.7)}
+  .ctable{overflow:hidden;border-radius:var(--radius);border:1px solid rgba(255,255,255,.1)}
+  .crow{display:grid;grid-template-columns:1.1fr 1fr 1fr;border-bottom:1px solid rgba(255,255,255,.08)}
+  .crow:last-child{border-bottom:none}
+  .crow>div{padding:20px 24px;font-size:.96rem}
+  .crow .lbl{font-weight:600;color:rgba(255,255,255,.9)}
+  .crow .dubai{background:rgba(199,154,70,.12);color:var(--gold-light);font-weight:500}
+  .crow .eu{color:rgba(255,255,255,.6)}
+  .crow.head>div{font-family:var(--serif);font-size:1.3rem;padding:22px 24px}
+  .crow.head .dubai{color:var(--gold-light)}
+
+  /* DIFF */
+  .cols2{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  .panel{border-radius:var(--radius);padding:36px 34px}
+  .panel.bad{background:var(--paper-2);border:1px solid rgba(0,0,0,.06)}
+  .panel.good{background:var(--ink);color:#fff;border:1px solid var(--gold)}
+  .panel h3{font-size:1.5rem;margin-bottom:22px}
+  .panel.good h3{color:var(--gold-light)}
+  .panel ul{list-style:none;display:grid;gap:14px}
+  .panel li{display:flex;gap:12px;font-size:.98rem;align-items:flex-start}
+  .panel.bad li{color:var(--muted)}
+  .panel li svg{flex:none;margin-top:3px}
+
+  /* VISION */
+  .vision{background:
+    linear-gradient(135deg,rgba(13,13,15,.92),rgba(13,13,15,.75)),
+    url('https://images.unsplash.com/photo-1546412414-e1885259563a?auto=format&fit=crop&w=2000&q=80') center/cover fixed;
+    color:#fff;text-align:center}
+  .vision h2{max-width:20ch;margin:0 auto 24px}
+  .vision .lead{margin:0 auto;color:rgba(255,255,255,.82)}
+
+  /* CTA FORM */
+  .cta{background:linear-gradient(135deg,var(--gold-light),var(--gold) 50%,var(--gold-deep));color:#1a1407}
+  .cta-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+  .cta h2{color:#1a1407;max-width:18ch}
+  .cta p{color:#3a2d0f;font-size:1.08rem;margin-top:16px;max-width:46ch}
+  form{background:#fff;border-radius:var(--radius);padding:34px;box-shadow:var(--shadow)}
+  form label{display:block;font-size:.82rem;font-weight:600;margin:0 0 7px;color:var(--ink)}
+  form input{width:100%;padding:13px 15px;border:1px solid #ddd;border-radius:10px;font-size:.98rem;margin-bottom:18px;font-family:var(--sans);transition:border .2s}
+  form input:focus{outline:none;border-color:var(--gold)}
+  form .btn{width:100%;justify-content:center}
+  form small{display:block;color:var(--muted);font-size:.78rem;margin-top:14px;text-align:center}
+
+  /* TESTIMONIALS */
+  .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .quote{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px}
+  .stars{color:var(--gold);letter-spacing:3px;font-size:.95rem;margin-bottom:14px}
+  .quote p{font-size:.97rem;color:var(--ink-soft);margin-bottom:20px}
+  .who{display:flex;align-items:center;gap:12px}
+  .who .av{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--gold-light),var(--gold-deep));display:grid;place-items:center;color:#1a1407;font-weight:700;font-family:var(--serif)}
+  .who b{font-size:.95rem}
+  .who span{font-size:.8rem;color:var(--muted)}
+
+  /* CONTACT / FOOTER */
+  footer{background:var(--ink);color:rgba(255,255,255,.75)}
+  .fcontact{text-align:center;padding-bottom:20px}
+  .fcontact h2{color:#fff;margin-bottom:18px}
+  .fcontact .lead{color:rgba(255,255,255,.7);margin:0 auto 10px}
+  .fwarn{color:var(--gold-light);font-style:italic;font-family:var(--serif);font-size:1.25rem;margin-bottom:34px}
+  .fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding:56px 0;border-top:1px solid rgba(255,255,255,.1)}
+  .fgrid .brand b{color:#fff}
+  .fcol h4{font-family:var(--sans);font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-light);margin-bottom:16px}
+  .fcol p,.fcol a{font-size:.92rem;color:rgba(255,255,255,.7);margin-bottom:10px;display:block}
+  .fcol a:hover{color:var(--gold-light)}
+  .copyright{text-align:center;padding:24px 0;border-top:1px solid rgba(255,255,255,.1);font-size:.82rem;color:rgba(255,255,255,.45)}
+
+  [data-en]{display:none}
+  html[lang="en"] [data-de]{display:none}
+  html[lang="en"] [data-en]{display:revert}
+
+  @media(max-width:880px){
+    .nav-links{display:none}
+    .burger{display:block}
+    .grid3,.tgrid{grid-template-columns:1fr}
+    .cols2,.cta-grid,.fgrid{grid-template-columns:1fr}
+    .crow{grid-template-columns:1fr}
+    .crow>div{border-bottom:1px solid rgba(255,255,255,.06)}
+    .crow .lbl{background:rgba(255,255,255,.04)}
+    .hero-ticker{position:static}
+    .vision{background-attachment:scroll}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand">
+      <img src="assets/ad-logo.png" alt="Asset Desk Real Estate" />
+      <div><b>Asset Desk</b><span>Real Estate</span></div>
+    </a>
+    <nav class="nav-links">
+      <a href="#dubai"><span data-de>Warum Dubai</span><span data-en>Why Dubai</span></a>
+      <a href="#vergleich"><span data-de>Vergleich</span><span data-en>Comparison</span></a>
+      <a href="#unterschied"><span data-de>Unterschied</span><span data-en>Difference</span></a>
+      <a href="#stimmen"><span data-de>Stimmen</span><span data-en>Reviews</span></a>
+      <a href="#kontakt"><span data-de>Kontakt</span><span data-en>Contact</span></a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button data-lang="de" class="active">DE</button>
+      <button data-lang="en">EN</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="wrap">
+    <p class="eyebrow" style="color:var(--gold-light)">Asset Desk Real Estate L.L.C — Dubai</p>
+    <h1>
+      <span data-de>Exklusive Immobilien in Dubai</span>
+      <span data-en>Exclusive Real Estate in Dubai</span>
+    </h1>
+    <p class="lead">
+      <span data-de>Investiere in nachhaltige & zukunftsstarke Luxusimmobilien in Dubai — mit deutscher Präzision und einem kuratierten Off-Market-Portfolio.</span>
+      <span data-en>Invest in sustainable, future-proof luxury real estate in Dubai — with German precision and a curated off-market portfolio.</span>
+    </p>
+    <ul class="hero-points">
+      <li>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" stroke="#e3c67f" stroke-width="1.5"/><path d="M7 12.5l3.2 3L17 9" stroke="#e3c67f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-de>Vermögenssicherung und nachhaltiges Wachstum</span><span data-en>Wealth preservation and sustainable growth</span>
+      </li>
+      <li>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" stroke="#e3c67f" stroke-width="1.5"/><path d="M7 12.5l3.2 3L17 9" stroke="#e3c67f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-de>Off-Market-Investments direkt vom Entwickler</span><span data-en>Off-market investments directly from developers</span>
+      </li>
+      <li>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" stroke="#e3c67f" stroke-width="1.5"/><path d="M7 12.5l3.2 3L17 9" stroke="#e3c67f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-de>Potenzielle Renditen zwischen 8–36 % jährlich</span><span data-en>Potential returns between 8–36% annually</span>
+      </li>
+    </ul>
+    <div class="hero-cta">
+      <a href="#kontakt" class="btn"><span data-de>Beratung sichern</span><span data-en>Book a consultation</span></a>
+      <a href="#dubai" class="btn btn-ghost"><span data-de>Mehr erfahren</span><span data-en>Learn more</span></a>
+    </div>
+  </div>
+  <div class="hero-ticker">
+    <div class="wrap">
+      <div class="stat"><b>35+</b><span data-de>Jahre Erfahrung</span><span data-en>Years of expertise</span></div>
+      <div class="stat"><b>0 %</b><span data-de>Steuer auf Mieterträge</span><span data-en>Tax on rental income</span></div>
+      <div class="stat"><b>8–36 %</b><span data-de>Rendite p. a.</span><span data-en>Returns p.a.</span></div>
+      <div class="stat"><b>100 %</b><span data-de>Kuratiertes Portfolio</span><span data-en>Curated portfolio</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE -->
+<section id="dubai">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><span data-de>Warum Dubai</span><span data-en>Why Dubai</span></p>
+      <h2><span data-de>Es ist Goldgräberzeit in Dubai</span><span data-en>Dubai is today's gold rush</span></h2>
+      <p class="lead">
+        <span data-de>Während europäische Immobilienmärkte stagnieren, wächst Dubai mit rekordverdächtiger Dynamik — ein Standort, der Sicherheit, Lebensqualität und Rendite vereint.</span>
+        <span data-en>While European property markets stagnate, Dubai grows with record momentum — a location that unites security, quality of life and returns.</span>
+      </p>
+    </div>
+    <div class="grid3">
+      <div class="card">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-5h6v5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+        <h3><span data-de>Weltklasse-Infrastruktur</span><span data-en>World-class infrastructure</span></h3>
+        <p><span data-de>Visionäre Architektur, modernste Anbindung und Annehmlichkeiten auf höchstem Niveau.</span><span data-en>Visionary architecture, cutting-edge connectivity and amenities at the highest level.</span></p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 19V9m5 10V5m5 14v-7m5 7V8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <h3><span data-de>Stabiler Immobilienmarkt</span><span data-en>Stable property market</span></h3>
+        <p><span data-de>Widerstandsfähig gegenüber globalen Schwankungen — getragen von echter Nachfrage.</span><span data-en>Resilient against global fluctuations — driven by genuine demand.</span></p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M8 7h6a3 3 0 010 6H8m0 0h7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3><span data-de>Steuerfreie Renditen</span><span data-en>Tax-free returns</span></h3>
+        <p><span data-de>Keine Einkommens- oder Kapitalertragsteuer — einer der größten Vorteile des Standorts.</span><span data-en>No income or capital gains tax — one of the location's greatest advantages.</span></p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.7"/><path d="M12 2a8 8 0 00-8 8c0 5 8 12 8 12s8-7 8-12a8 8 0 00-8-8z" stroke="currentColor" stroke-width="1.5"/></svg></div>
+        <h3><span data-de>Strategische Lage</span><span data-en>Strategic location</span></h3>
+        <p><span data-de>Das Tor zwischen Europa, Asien und Afrika — im Zentrum der globalen Handelsströme.</span><span data-en>The gateway between Europe, Asia and Africa — at the centre of global trade flows.</span></p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.5 6.5L21 9l-5 4.5L17.5 21 12 17l-5.5 4L8 13.5 3 9l6.5-.5L12 2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></div>
+        <h3><span data-de>Höchste Lebensqualität</span><span data-en>Exceptional quality of life</span></h3>
+        <p><span data-de>Luxuriöses Shopping, Weltklasse-Gastronomie und Sicherheit auf Spitzenniveau.</span><span data-en>Luxury shopping, world-class dining and top-tier safety.</span></p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+        <h3><span data-de>Zukunftsorientierte Vision</span><span data-en>Future-oriented vision</span></h3>
+        <p><span data-de>Der Dubai 2040 Urban Master Plan sichert langfristiges, planbares Wachstum.</span><span data-en>The Dubai 2040 Urban Master Plan secures long-term, predictable growth.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="compare" id="vergleich">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><span data-de>Dubai vs. Europa</span><span data-en>Dubai vs. Europe</span></p>
+      <h2><span data-de>Der Unterschied zwischen Immobilien in Dubai & Europa</span><span data-en>The difference between property in Dubai & Europe</span></h2>
+    </div>
+    <div class="ctable">
+      <div class="crow head">
+        <div class="lbl"></div>
+        <div class="dubai">Dubai</div>
+        <div class="eu"><span data-de>Europa</span><span data-en>Europe</span></div>
+      </div>
+      <div class="crow">
+        <div class="lbl"><span data-de>Rendite</span><span data-en>Returns</span></div>
+        <div class="dubai"><span data-de>Bis zu 10 % p. a.</span><span data-en>Up to 10% p.a.</span></div>
+        <div class="eu"><span data-de>Oft niedriger, marktabhängig</span><span data-en>Often lower, market-dependent</span></div>
+      </div>
+      <div class="crow">
+        <div class="lbl"><span data-de>Steuern</span><span data-en>Taxes</span></div>
+        <div class="dubai"><span data-de>Keine Einkommens- / Kapitalertragsteuer</span><span data-en>No income / capital gains tax</span></div>
+        <div class="eu"><span data-de>Variabel, oft erheblich</span><span data-en>Variable, often substantial</span></div>
+      </div>
+      <div class="crow">
+        <div class="lbl"><span data-de>Kaufprozess</span><span data-en>Purchase process</span></div>
+        <div class="dubai"><span data-de>Einfach und transparent</span><span data-en>Simple and transparent</span></div>
+        <div class="eu"><span data-de>Teils Einschränkungen für Ausländer</span><span data-en>May restrict foreign buyers</span></div>
+      </div>
+      <div class="crow">
+        <div class="lbl"><span data-de>Wachstumspotenzial</span><span data-en>Growth potential</span></div>
+        <div class="dubai"><span data-de>Hoch durch Entwicklungsprojekte</span><span data-en>High, driven by development projects</span></div>
+        <div class="eu"><span data-de>Oft gesättigte Märkte</span><span data-en>Often saturated markets</span></div>
+      </div>
+      <div class="crow">
+        <div class="lbl"><span data-de>Diversifikation</span><span data-en>Diversification</span></div>
+        <div class="dubai"><span data-de>Echte Portfolio-Diversifikation</span><span data-en>Genuine portfolio diversification</span></div>
+        <div class="eu"><span data-de>Regional unterschiedlich</span><span data-en>Varies by region</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENTIATOR -->
+<section id="unterschied">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><span data-de>Der Asset-Desk-Unterschied</span><span data-en>The Asset Desk difference</span></p>
+      <h2><span data-de>Das schätzen Investoren an Asset Desk</span><span data-en>What investors value about Asset Desk</span></h2>
+    </div>
+    <div class="cols2">
+      <div class="panel bad">
+        <h3><span data-de>Übliche Makler</span><span data-en>Typical brokers</span></h3>
+        <ul>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#b9b4a8" stroke-width="1.5"/><path d="M8 8l8 8M16 8l-8 8" stroke="#b9b4a8" stroke-width="1.7" stroke-linecap="round"/></svg><span data-de>Standardangebote ohne echten Fokus</span><span data-en>Standard listings with no real focus</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#b9b4a8" stroke-width="1.5"/><path d="M8 8l8 8M16 8l-8 8" stroke="#b9b4a8" stroke-width="1.7" stroke-linecap="round"/></svg><span data-de>Quantität statt Qualität</span><span data-en>Quantity over quality</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#b9b4a8" stroke-width="1.5"/><path d="M8 8l8 8M16 8l-8 8" stroke="#b9b4a8" stroke-width="1.7" stroke-linecap="round"/></svg><span data-de>Sprachbarrieren, keine deutschen Standards</span><span data-en>Language barriers, no German standards</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#b9b4a8" stroke-width="1.5"/><path d="M8 8l8 8M16 8l-8 8" stroke="#b9b4a8" stroke-width="1.7" stroke-linecap="round"/></svg><span data-de>Schwache Betreuung nach dem Kauf</span><span data-en>Poor support after purchase</span></li>
+        </ul>
+      </div>
+      <div class="panel good">
+        <h3>Asset Desk</h3>
+        <ul>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#e3c67f" stroke-width="1.5"/><path d="M7 12.5l3.2 3L17 9" stroke="#e3c67f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-de>Kuratiertes Premium-Portfolio mit einzigartigen Objekten</span><span data-en>Curated premium portfolio of unique properties</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#e3c67f" stroke-width="1.5"/><path d="M7 12.5l3.2 3L17 9" stroke="#e3c67f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-de>Ehrliche, transparente Beratung</span><span data-en>Honest, transparent advisory</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#e3c67f" stroke-width="1.5"/><path d="M7 12.5l3.2 3L17 9" stroke="#e3c67f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-de>Exklusiver Zugang zu Off-Market-Objekten</span><span data-en>Exclusive access to off-market properties</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#e3c67f" stroke-width="1.5"/><path d="M7 12.5l3.2 3L17 9" stroke="#e3c67f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-de>Individuell begleiteter Kaufprozess</span><span data-en>Personally guided purchase process</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#e3c67f" stroke-width="1.5"/><path d="M7 12.5l3.2 3L17 9" stroke="#e3c67f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-de>35+ Jahre Expertise aus Deutschland & Dubai</span><span data-en>35+ years of combined German & Dubai expertise</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION -->
+<section class="vision">
+  <div class="wrap">
+    <p class="eyebrow" style="color:var(--gold-light)"><span data-de>Damit du profitierst</span><span data-en>So that you profit</span></p>
+    <h2><span data-de>DAS führende deutsche Real-Estate-Unternehmen in Dubai zu sein</span><span data-en>To be THE leading German real estate firm in Dubai</span></h2>
+    <p class="lead"><span data-de>Unsere Mission: höchste Servicequalität, aus Kunden begeisterte Fans machen und die Marktführerschaft im Segment der Luxusimmobilien übernehmen — mit kompletter Begleitung von der ersten Idee bis zur Schlüsselübergabe.</span><span data-en>Our mission: the highest service quality, turning clients into passionate fans and taking market leadership in luxury real estate — with complete support from first idea to handover of the keys.</span></p>
+  </div>
+</section>
+
+<!-- CTA FORM -->
+<section class="cta" id="kontakt">
+  <div class="wrap cta-grid">
+    <div>
+      <p class="eyebrow" style="color:#5a450f"><span data-de>Unverbindliche Beratung</span><span data-en>Free consultation</span></p>
+      <h2><span data-de>Du hast nichts zu verlieren — außer die aktuelle Investment-Möglichkeit</span><span data-en>You have nothing to lose — except today's investment opportunity</span></h2>
+      <p><span data-de>Vereinbare jetzt ein kostenloses, unverbindliches Beratungsgespräch und wir besprechen deine persönlichen Möglichkeiten in Dubai.</span><span data-en>Book a free, no-obligation consultation and we'll walk through your personal options in Dubai.</span></p>
+    </div>
+    <form onsubmit="event.preventDefault();this.querySelector('.ok').style.display='block';">
+      <label><span data-de>Vorname</span><span data-en>First name</span> *</label>
+      <input type="text" required placeholder="Max" />
+      <label><span data-de>Nachname</span><span data-en>Last name</span></label>
+      <input type="text" placeholder="Mustermann" />
+      <label>E-Mail *</label>
+      <input type="email" required placeholder="max@email.com" />
+      <button class="btn" type="submit"><span data-de>Einreichen</span><span data-en>Submit</span></button>
+      <small class="ok" style="display:none;color:var(--gold-deep);font-weight:600"><span data-de>Danke! Wir melden uns in Kürze.</span><span data-en>Thank you! We'll be in touch shortly.</span></small>
+      <small><span data-de>Deine Daten werden vertraulich behandelt.</span><span data-en>Your data is treated confidentially.</span></small>
+    </form>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="stimmen">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><span data-de>Investorenstimmen</span><span data-en>Investor voices</span></p>
+      <h2><span data-de>Was unsere Investoren sagen</span><span data-en>What our investors say</span></h2>
+    </div>
+    <div class="tgrid">
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p><span data-de>„Endlich ein ehrlicher, geradliniger Partner in Dubai. Die Betreuung war von der ersten Minute an erstklassig."</span><span data-en>"Finally an honest, straightforward partner in Dubai. The support was first-class from minute one."</span></p>
+        <div class="who"><div class="av">MT</div><div><b>Marco T.</b><span data-de>Investor · München</span><span data-en>Investor · Munich</span></div></div>
+      </div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p><span data-de>„Bestes Team überhaupt — transparent, schnell und immer erreichbar. Besser geht es kaum."</span><span data-en>"Best team ever — transparent, fast and always reachable. It couldn't be better."</span></p>
+        <div class="who"><div class="av">KF</div><div><b>Kurt F.</b><span data-de>Privatinvestor</span><span data-en>Private investor</span></div></div>
+      </div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p><span data-de>„Volle 200 % Einsatz für die Ziele des Kunden. Man merkt die Leidenschaft des gesamten Teams."</span><span data-en>"Full 200% commitment to the client's goals. You feel the whole team's passion."</span></p>
+        <div class="who"><div class="av">LT</div><div><b>Lucas T.</b><span data-de>Unternehmer</span><span data-en>Entrepreneur</span></div></div>
+      </div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p><span data-de>„Beeindruckend, wie schnell sich die Stadt entwickelt — und wie kompetent man hier begleitet wird. Sechs Sterne."</span><span data-en>"Impressive how fast the city develops — and how competently you're guided here. Six stars."</span></p>
+        <div class="who"><div class="av">DB</div><div><b>Dieter B.</b><span data-de>Kapitalanleger</span><span data-en>Capital investor</span></div></div>
+      </div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p><span data-de>„Seriöse Beratung, klare Zahlen, keine leeren Versprechen. Genau so stelle ich mir einen Partner vor."</span><span data-en>"Serious advice, clear numbers, no empty promises. Exactly how I imagine a partner."</span></p>
+        <div class="who"><div class="av">CG</div><div><b>Christian G.</b><span data-de>Geschäftsführer</span><span data-en>Managing director</span></div></div>
+      </div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p><span data-de>„Tolle Menschen, erstklassiger Service und ein Netzwerk, das wirklich Türen öffnet."</span><span data-en>"Great people, first-class service and a network that genuinely opens doors."</span></p>
+        <div class="who"><div class="av">MS</div><div><b>Mario S.</b><span data-de>Investor · Wien</span><span data-en>Investor · Vienna</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="fcontact" style="padding-top:clamp(60px,9vw,110px)">
+      <p class="eyebrow" style="color:var(--gold-light)"><span data-de>Kontakt</span><span data-en>Contact</span></p>
+      <h2><span data-de>Du hast Fragen?</span><span data-en>Have questions?</span></h2>
+      <p class="lead"><span data-de>Vereinbare jetzt ein unverbindliches Beratungsgespräch und sichere dir exklusiven Zugang zu unserem Portfolio.</span><span data-en>Book a no-obligation consultation now and secure exclusive access to our portfolio.</span></p>
+      <p class="fwarn"><span data-de>In einem Jahr könntest du es sonst bereuen …</span><span data-en>A year from now, you might wish you had …</span></p>
+      <a href="#kontakt" class="btn"><span data-de>Jetzt Beratung sichern</span><span data-en>Book your consultation</span></a>
+    </div>
+    <div class="fgrid">
+      <div class="fcol">
+        <a href="#top" class="brand" style="margin-bottom:16px">
+          <img src="assets/ad-logo.png" alt="Asset Desk" style="width:46px;height:46px;border-radius:12px" />
+          <div><b style="font-family:var(--serif);font-size:1.2rem">Asset Desk</b><span style="font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-light)">Real Estate L.L.C</span></div>
+        </a>
+        <p><span data-de>Exklusive Luxusimmobilien in Dubai — mit deutscher Präzision und einem kuratierten Off-Market-Portfolio.</span><span data-en>Exclusive luxury real estate in Dubai — with German precision and a curated off-market portfolio.</span></p>
+      </div>
+      <div class="fcol">
+        <h4><span data-de>Kontakt</span><span data-en>Contact</span></h4>
+        <a href="mailto:admin@assetdesk.ae">admin@assetdesk.ae</a>
+      </div>
+      <div class="fcol">
+        <h4><span data-de>Büro</span><span data-en>Office</span></h4>
+        <p>Dubai Media City<br/>Al Sufouh 2, Dubai, UAE</p>
+      </div>
+    </div>
+    <div class="copyright">© 2026 Asset Desk Real Estate L.L.C — <span data-de>Alle Rechte vorbehalten.</span><span data-en>All rights reserved.</span></div>
+  </div>
+</footer>
+
+<script>
+  const nav=document.getElementById('nav');
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
+  document.querySelectorAll('.lang button').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const l=b.dataset.lang;
+      document.documentElement.lang=l;
+      document.querySelectorAll('.lang button').forEach(x=>x.classList.toggle('active',x===b));
+    });
+  });
+</script>
+</body>
+</html>
